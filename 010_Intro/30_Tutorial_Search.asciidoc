@@ -180,18 +180,18 @@ GET /megacorp/employee/_search
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "bool": {
             "must": {
                 "match" : {
-                    "last_name" : "smith" <1>
+                    "last_name" : "smith"
                 }
             },
             "filter": {
                 "range" : {
-                    "age" : { "gt" : 30 } <2>
+                    "age" : { "gt" : 30 }
                 }
             }
         }
