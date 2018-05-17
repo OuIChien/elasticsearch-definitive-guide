@@ -160,7 +160,7 @@ _领域特定语言_ （DSL），((("DSL (Domain Specific Language)"))) 指定�
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "match" : {
@@ -180,18 +180,18 @@ GET /megacorp/employee/_search
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "bool": {
             "must": {
                 "match" : {
-                    "last_name" : "smith" <1>
+                    "last_name" : "smith"
                 }
             },
             "filter": {
                 "range" : {
-                    "age" : { "gt" : 30 } <2>
+                    "age" : { "gt" : 30 }
                 }
             }
         }
@@ -237,7 +237,7 @@ GET /megacorp/employee/_search
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "match" : {
@@ -302,7 +302,7 @@ climbing'' 。
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "match_phrase" : {
@@ -348,7 +348,7 @@ GET /megacorp/employee/_search
 
 [source,js]
 --------------------------------------------------
-GET /megacorp/employee/_search
+POST /megacorp/employee/_search
 {
     "query" : {
         "match_phrase" : {
@@ -386,7 +386,7 @@ GET /megacorp/employee/_search
             },
             "highlight": {
                "about": [
-                  "I love to go <em>rock</em> <em>climbing</em>" <1>
+                  "I love to go <em>rock</em> <em>climbing</em>"
                ]
             }
          }
